@@ -37,7 +37,6 @@
         <span>Loading...</span>
       </div>
   
-      <!-- Button to trigger modal -->
       <button
         class="bg-green-500 text-white p-2 mt-4"
         @click="showModal = true"
@@ -45,7 +44,6 @@
         Add New Post
       </button>
   
-      <!-- Modal for adding a new post -->
       <div
         v-if="showModal"
         class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
@@ -110,7 +108,6 @@
     store.sortPostsById()
   }
   
-  // Modal related data and methods
   const showModal = ref(false)
   const newPost = ref({
     title: '',
@@ -121,7 +118,7 @@
     if (newPost.value.title && newPost.value.body) {
       await store.addPost(newPost.value)
       showModal.value = false
-      newPost.value = { title: '', body: '' } // Reset the form
+      newPost.value = { title: '', body: '' } 
     }
   }
   

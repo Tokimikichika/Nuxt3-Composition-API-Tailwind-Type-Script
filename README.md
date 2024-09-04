@@ -1,75 +1,76 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 Composition API Project
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Описание проекта
 
-## Setup
+Данный проект реализован с использованием Nuxt 3, Composition API, Tailwind CSS и TypeScript. Основная цель проекта — создание приложения, которое позволяет просматривать, сортировать и добавлять посты с использованием данных из [JSONPlaceholder API](https://jsonplaceholder.typicode.com/).
 
-Make sure to install the dependencies:
+## Основные функции
 
-```bash
-# npm
-npm install
+### Просмотр постов
 
-# pnpm
-pnpm install
+- Реализована таблица для отображения постов с полями `ID`, `Title` (заголовок) и `Body` (содержимое).
+- **Пагинация:** по 10 элементов на страницу.
+- **Состояние перезагрузки:** отображается с помощью throbber (индикатор загрузки).
 
-# yarn
-yarn install
+### Сортировка постов по ID
 
-# bun
-bun install
-```
+- Возможность сортировки записей в таблице по возрастанию и убыванию ID.
 
-## Development Server
+### Добавление нового поста
 
-Start the development server on `http://localhost:3000`:
+- Возможность добавления нового поста через модальное окно.
+- Новый пост добавляется в начало списка.
 
-```bash
-# npm
-npm run dev
+### Хранение данных
 
-# pnpm
-pnpm run dev
+- Полученные посты и состояние перезагрузки сохраняются в менеджере состояния (Pinia).
 
-# yarn
-yarn dev
+## Структура проекта
 
-# bun
-bun run dev
-```
+- **`pages/about.vue`**: Основной компонент для отображения списка постов, пагинации, сортировки и добавления нового поста.
+- **`stores/posts.ts`**: Менеджер состояния, реализованный с помощью Pinia, для управления данными постов, сортировкой и добавлением новых постов.
+- **`assets/css/tailwind.css`**: Основной файл стилей, использующий Tailwind CSS.
+- **`nuxt.config.ts`**: Конфигурация Nuxt 3, включающая поддержку Pinia и Tailwind CSS.
 
-## Production
+## Установка и запуск проекта
 
-Build the application for production:
+1. **Клонировать репозиторий:**
 
-```bash
-# npm
-npm run build
+    ```bash
+    git clone <repository_url>
+    cd <repository_directory>
+    ```
 
-# pnpm
-pnpm run build
+2. **Установить зависимости:**
 
-# yarn
-yarn build
+    ```bash
+    npm install
+    ```
 
-# bun
-bun run build
-```
+3. **Запустить проект в режиме разработки:**
 
-Locally preview production build:
+    ```bash
+    npm run dev
+    ```
 
-```bash
-# npm
-npm run preview
+    Приложение будет доступно по адресу: `http://localhost:3000/`
 
-# pnpm
-pnpm run preview
+4. **Сборка проекта для продакшн:**
 
-# yarn
-yarn preview
+    ```bash
+    npm run build
+    ```
 
-# bun
-bun run preview
-```
+5. **Предпросмотр собранного проекта:**
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+    ```bash
+    npm run preview
+    ```
+
+## Используемые технологии
+
+- **Nuxt 3**: Фреймворк для создания приложений на Vue.js с серверным рендерингом (SSR), статической генерацией и клиентским рендерингом.
+- **Composition API**: API для построения компонентов Vue.js с улучшенной композиционностью и гибкостью.
+- **Tailwind CSS**: Утилитарный CSS-фреймворк для быстрого построения интерфейсов.
+- **TypeScript**: Статическая типизация для JavaScript, повышающая качество и удобство разработки.
+- **Pinia**: Легковесный и гибкий менеджер состояния для Vue.js, предлагающий улучшенные возможности работы с состоянием по сравнению с Vuex.
