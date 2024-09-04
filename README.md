@@ -37,8 +37,7 @@
 1. **Клонировать репозиторий:**
 
     ```bash
-    git clone <repository_url>
-    cd <repository_directory>
+    git clone https://github.com/Tokimikichika/Nuxt3-Composition-API-Tailwind-Type-Script.git
     ```
 
 2. **Установить зависимости:**
